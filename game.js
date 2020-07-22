@@ -1,5 +1,6 @@
 import {getClue as getClueFromCallback} from './callback-version.js';
 import {getClue as getClueFromPromise} from './promise-version.js';
+import {getClue as getClueFromAsyncFunction} from './async-await-version.js';
 const question = document.getElementById('question');
 const answer = document.getElementById('answer');
 const value = document.getElementById('value');
@@ -43,5 +44,19 @@ document.addEventListener('DOMContentLoaded', () =>{
         .then(clue=>setInnerHtml(clue))
         .catch(message=> console.log(message))
     })
+
+    document
+    .getElementById('use-async-await')
+    .addEventListener('click', async () => {
+        try {
+            let clue = await getClueFromAsyncFunction();
+            setInnerHtml(clue);
+
+        }
+        catch (e) {
+            console.error(e);
+        }
+    })
+
 
 })

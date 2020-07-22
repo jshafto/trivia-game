@@ -5,7 +5,7 @@ This project consists of a trivia game using three different asynchronous progra
 - [x] Create the HTML and CSS
 - [x] Using a callback
 - [x] Using a Promise object with fetch
-- [ ] Using async and await
+- [x] Using async and await
 - [ ] Make it a game
 - [ ] Bonus round: make a progressively enhanced application
 - [ ] Nightmare round: mark clues as invalid
