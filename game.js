@@ -1,6 +1,8 @@
 import {getClue as getClueFromCallback} from './callback-version.js';
 import {getClue as getClueFromPromise} from './promise-version.js';
 import {getClue as getClueFromAsyncFunction} from './async-await-version.js';
+import {newClue} from './new-clue.js';
+
 const question = document.getElementById('question');
 const answer = document.getElementById('answer');
 const value = document.getElementById('value');
@@ -86,6 +88,18 @@ document.addEventListener('DOMContentLoaded', () =>{
         answer.classList.remove('is-hidden');
         score.innerHTML = playerScore;
         localStorage.setItem('playerScore', playerScore);
+    })
+
+    document
+    .getElementById('submit')
+    .addEventListener('click', event=> {
+        event.preventDefault();
+        let newObj = {};
+        newObj.answer = document.getElementById('new-answer').value;
+        newObj.question = document.getElementById('new-question').value;
+        newObj.value = Number(document.getElementById('new-value').value);
+        newObj.categoryId = Number(document.getElementById('new-category').value);
+        newClue(newObj);
     })
 
 })

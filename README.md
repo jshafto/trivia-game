@@ -10,3 +10,7 @@ This project consists of a trivia game using three different asynchronous progra
 - [x] Bonus round: make a progressively enhanced application
 - [ ] Nightmare round: mark clues as invalid
 - [ ] Nightmare round: create new clues
+
+
+## Project Status
+- Nightmare bonus implementation attempted, but returns 400 error
