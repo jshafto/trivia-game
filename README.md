@@ -7,6 +7,6 @@ This project consists of a trivia game using three different asynchronous progra
 - [x] Using a Promise object with fetch
 - [x] Using async and await
 - [x] Make it a game
-- [ ] Bonus round: make a progressively enhanced application
+- [x] Bonus round: make a progressively enhanced application
 - [ ] Nightmare round: mark clues as invalid
 - [ ] Nightmare round: create new clues

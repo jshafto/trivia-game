@@ -10,6 +10,12 @@ const checkResponse = document.getElementById('check-response');
 let textarea = document.getElementById('player-response');
 let score = document.getElementById('score');
 let playerScore = 0;
+if(localStorage.getItem('playerScore')){
+    playerScore = Number(localStorage.getItem('playerScore'));
+}
+if(localStorage.getItem('clue')){
+    setInnerHtml(JSON.parse(localStorage.getItem('clue')));
+}
 
 function setInnerHtml(clue){
     question.innerHTML = clue.question;
@@ -25,11 +31,14 @@ function setInnerHtml(clue){
         invalidCount.innerHTML = 'valid';
     }
 
+    // store entire clue in local
+    localStorage.setItem('clue',JSON.stringify(clue));
 }
 
 
 
 document.addEventListener('DOMContentLoaded', () =>{
+    score.innerHTML = playerScore;
     document
     .getElementById('use-callback')
     .addEventListener('click', ()=>{
@@ -76,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
         answer.classList.remove('is-hidden');
         score.innerHTML = playerScore;
+        localStorage.setItem('playerScore', playerScore);
     })
 
 })
